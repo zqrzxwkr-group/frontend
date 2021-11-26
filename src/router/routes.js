@@ -7,7 +7,7 @@ const Info = () => import('@/components/views/Info')
 const Subject = () => import('@/components/views/Subject')
 const Score = () => import('@/components/pages/Score')
 const Question = () => import('@/components/pages/Question')
-const Introduction = () => import('@/components/pages/Introduction')
+const Feedback = () => import('@/components/pages/Feedback')
 
 const routes = [
   {
@@ -45,7 +45,7 @@ const routes = [
       },
       {
         path: '/score',
-        name: '分数排行信息',
+        name: '高校分数信息',
         component: Score,
         meta: {
           requiresAuth: true // 是否需要登录
@@ -60,9 +60,9 @@ const routes = [
         }
       },
       {
-        path: '/introduction',
-        name: '简介',
-        component: Introduction
+        path: '/feedback',
+        name: '反馈',
+        component: Feedback
       }
     ]
   },

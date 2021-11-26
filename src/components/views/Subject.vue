@@ -1,4 +1,5 @@
 <template>
+<div class="table">
   <Collapse accordion v-model="value3"  class="collapse">
     <Panel name='1' class="menu" :hide-arrow="true">
         哲学
@@ -1759,6 +1760,7 @@
             </div>
     </Panel>
   </Collapse>
+</div>
 </template>
 <script>
     export default {
@@ -1785,6 +1787,7 @@
 
   .collapse
     {
+        background-color:#fff;
         position: relative;
         top: 25px;
     }

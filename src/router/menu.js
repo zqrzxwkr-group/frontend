@@ -34,7 +34,7 @@ const menu = [
       {
         level: 1,
         path: '/score',
-        name: '分数排行信息',
+        name: '高校分数信息',
         icon: 'icon-addpeople_fill',
         children: [],
         fixed: false
@@ -53,14 +53,14 @@ const menu = [
         path: '/question',
         children: [],
         fixed: false,
-        name: '提问'
+        name: ' 提问'
       },
       {
         level: 1,
-        path: '/introduction',
+        path: '/feedback',
         children: [],
         fixed: false,
-        name: '简介'
+        name: ' 反馈'
       }
     ]
   },

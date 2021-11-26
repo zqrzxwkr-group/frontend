@@ -17,3 +17,9 @@
   }
 
 </script>
+<style scoped>
+#sticker{
+background-color:#fff
+}
+
+</style>

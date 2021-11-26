@@ -5,7 +5,7 @@
     <div class="side-wrapper" :class="{hover:!state.sidebar.minOpened,light:theme=='light'}">
       <!-- 左侧导航 -->
       <nav-bar style="padding-bottom: 80px">
-        <Menu width="220" :theme="theme" :accordion="true" @on-select="selectFn" :active-name="$route.path">
+        <Menu width="200" :theme="theme" :accordion="true" @on-select="selectFn" :active-name="$route.path">
           <div v-for="(item,index) in menu " :key="index">
             <Submenu :name="index" v-if="item.children && item.children.length>0 && !item.hidden">
               <template slot="title">
@@ -13,8 +13,10 @@
                 {{item.name}}
               </template>
               <Menu-item :name="sub.path" v-for="(sub,i) in item.children" :key="i">
+                <div style="position:relative;left:-15px;">
                 <i class="icon iconfont " :class="sub.icon ? sub.icon : 'icon-collection'"></i>
                 {{sub.name}}
+                </div>
               </Menu-item>
             </Submenu>
             <div>
@@ -41,7 +43,8 @@
             <Icon type="arrow-down-b"></Icon>
           </a>
           <Dropdown-menu slot="list">
-            <Dropdown-item @click.native="modalUser=true">个人信息</Dropdown-item>
+            <!-- <Dropdown-item @click.native="modalUser=true">个人信息</Dropdown-item> -->
+            <Dropdown-item @click.native="showinfo">个人信息</Dropdown-item>
             <Dropdown-item @click.native="logout">退出登录</Dropdown-item>
           </Dropdown-menu>
         </Dropdown>
@@ -158,6 +161,14 @@
 
     },
     methods: {
+      showinfo () {
+        var str = '用户名：123' + '<br/>' + '&nbsp&nbsp&nbsp&nbsp密&nbsp码：123'
+        this.$Message.info({
+          closable: 'true',
+          content: str,
+          duration: 2
+        })
+      },
       // 查看个人信息密码验证
       checkUser (name) {
         this.modal_loading = true

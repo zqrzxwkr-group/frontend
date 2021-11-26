@@ -1,6 +1,7 @@
 // 导入模块
 import Vue from 'vue'
 import axios from 'axios'
+Vue.prototype.$axios = axios
 import { SERVER_BASE_URL } from './config'
 // import router from '@/router'
 import iView, {Notice } from 'iview'

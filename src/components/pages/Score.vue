@@ -1,69 +1,163 @@
 <template>
-  <div class="filter">
-    <Row>
-      <i-col>
-        <Card>
-          <h2>最常见过滤器</h2>
-          <h4>隐藏敏感信息</h4>
-          <p>姓名:{{name}} => {{ name | star}}</p>
-          <p>手机号：{{phone}} =>{{phone | star}}</p>
-          <p>身份证：{{idCard}} =>{{idCard | star}}</p>
-          <p>银行卡号：{{bankNum}} =>{{bankNum | star}}</p>
-          <h4>格式化发布时间</h4>
-          <p>{{itme.one}} => {{itme.one | timeAgo}}</p>
-          <p>{{itme.now}} => {{itme.now | timeAgo}}</p>
-          <p>{{itme.now1}} => {{itme.now1 | timeAgo}}</p>
-          <p>{{itme.now3}} => {{itme.now3 | timeAgo}}</p>
-          <p>{{itme.now2}} => {{itme.now2 | timeAgo}}</p>
-          <h4>格式化货币</h4>
-          <p>{{currency.money}} =>{{currency.money | currency}}</p>
-          <p>{{currency.money}} =>{{currency.money | currency('￥')}}</p>
-          <p>{{currency.money}} =>{{currency.money | currency('€', 3)}}</p>
-          <h4>时间格式化</h4>
-          <p>时间对象默认转换</p>
-          <p>{{itme.now}} =>{{itme.now | timeFormat}}</p>
-          <p>时间戳默认转换</p>
-          <p>{{itme.now1}} =>{{itme.now1 | timeFormat}}</p>
-          <p>时间格式改变</p>
-          <p>{{itme.now2}} =>{{itme.now2 | timeFormat('YY/MM/DD HH:mm')}}</p>
-          <h6 class="Button--primary Button--blue">欢迎分享</h6>
-        </Card>
-      </i-col>
-    </Row>
+  <div class='table'>
+    <br>
+    <h1 class='title'>考生选择地区以及文/理科</h1>
+    <div class='select'>
+      <RadioGroup v-model='button1' type='button' size='large' class='RadioGroup'>
+        <Radio label='北京' class='pro'></Radio>
+        <Radio label='安徽' class='pro'></Radio>
+        <Radio label='重庆' class='pro'></Radio>
+        <Radio label='福建' class='pro'></Radio>
+        <Radio label='甘肃' class='pro'></Radio>
+        <br />
+        <Radio label='广东' class='pro'></Radio>
+        <Radio label='广西' class='pro'></Radio>
+        <Radio label='贵州' class='pro'></Radio>
+        <Radio label='海南' class='pro'></Radio>
+        <Radio label='河北' class='pro'></Radio>
+        <br />
+        <Radio label='河南' class='pro'></Radio>
+        <Radio label='黑龙江' class='pro'></Radio>
+        <Radio label='湖北' class='pro'></Radio>
+        <Radio label='湖南' class='pro'></Radio>
+        <Radio label='吉林' class='pro'></Radio>
+        <br />
+        <Radio label='江苏' class='pro'></Radio>
+        <Radio label='江西' class='pro'></Radio>
+        <Radio label='辽宁' class='pro'></Radio>
+        <Radio label='内蒙古' class='pro'></Radio>
+        <Radio label='宁夏' class='pro'></Radio>
+        <br />
+        <Radio label='青海' class='pro'></Radio>
+        <Radio label='山东' class='pro'></Radio>
+        <Radio label='山西' class='pro'></Radio>
+        <Radio label='陕西' class='pro'></Radio>
+        <Radio label='四川' class='pro'></Radio>
+        <br />
+        <Radio label='天津' class='pro'></Radio>
+        <Radio label='西藏' class='pro'></Radio>
+        <Radio label='新疆' class='pro'></Radio>
+        <Radio label='云南' class='pro'></Radio>
+      </RadioGroup>
+    </div>
+    <div class='select2'>
+      <RadioGroup v-model='wenli' size='large'>
+        <Radio label='理科' class='wl'></Radio>
+        <Radio label='文科'></Radio>
+      </RadioGroup>
+    </div>
+    <div class='select3'>
+      <Button type='primary' icon='ios-search' @click='query()'>查询</Button>
+    </div>
+    <br />
+    <br />
+    <div v-if='isShow'>
+      <Table :columns='columns1' :data='data1'></Table>
+      <Page :total="total" :current="currentPage" :page-size="pageSize" @on-change="changePage"></Page>
+    </div>
   </div>
 </template>
 <script>
-  export default {
-    name: 'filter',
-    data () {
-      return {
-        name: '谭杰',
-        phone: 15988880460,
-        idCard: 420528199012208888,
-        bankNum: 591626554586339999,
-        itme: {
-          one: '2017-8-29 13:54',
-          now: new Date(),
-          now1: new Date() - 60 * 1000,
-          now3: new Date() - 60 * 60 * 1000,
-          now2: '2017-7-29 13:54'
+const axios = require('axios')
+export default {
+  name: 'table',
+  components: {},
+  data () {
+    return {
+      isShow: false,
+      button1: '北京',
+      wenli: '理科',
+      info: null,
+      total: 100,
+      currentPage: 1,
+      pageSize: 20,
+      columns1: [
+        {
+          title: '学校',
+          key: 'name'
         },
-        currency: {
-          money: 100000
+        {
+          title: '双一流情况',
+          key: 'dc'
+        },
+        {
+          title: '2020年分数',
+          key: 's2020'
+        },
+        {
+          title: '2019年分数',
+          key: 's2019'
+        },
+        {
+          title: '2018年分数',
+          key: 's2018'
+        },
+        {
+          title: '2017年分数',
+          key: 's2017'
+        },
+        {
+          title: '2016年分数',
+          key: 's2016'
         }
-
+      ],
+      data1: [
+      ]
+    }
+  },
+  methods: {
+    query: function () {
+      axios
+        .get(
+          'http://47.94.129.13:8081/query/' + this.button1 + '/' + this.wenli + '/' + this.currentPage
+        )
+        .then((response) => (this.info = response))
+      this.isShow = true
+      this.total = 0
+      this.data1 = []
+      for (var i = 0; i < this.info.data.data.length; i++) {
+        var item = {name: this.info.data.data[i].school,
+          dc: this.info.data.data[i].doubleFirstClass,
+          s2020: this.info.data.data[i].avg2020,
+          s2019: this.info.data.data[i].avg2019,
+          s2018: this.info.data.data[i].avg2018,
+          s2017: this.info.data.data[i].avg2017,
+          s2016: this.info.data.data[i].avg2016}
+        this.data1.unshift(item)
       }
+      this.total = this.info.data.total
+      // console.log(this.total)
+    },
+    changePage (index) {
+      this.currentPage = index
+      this.data1 = []
+      this.query()
     }
   }
+}
 </script>
 <style scoped>
-  .Button--primary.Button--blue {
-    color: #fff;
-    padding: 10px;
-    background: -webkit-gradient(linear,left top,right top,from(#15b982),to(#01d18b));
-    background: linear-gradient(90deg,#15b982,#01d18b);
-    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.16);
-    box-shadow: 0 3px 6px rgba(0,0,0,.16);
-  }
+.title {
+  text-align: center;
+}
+.select{
+  margin: auto;
+  width: 50%;
+  padding: 20px;
+}
+.select2{
+  margin: auto;
+  width: 15%;
+  padding: 20px;
+}
+.select3{
+  margin: auto;
+  width: 12%;
+  padding: 20px;
+}
+.pro{
+  width: 120px;
+  height: 60px;
+  text-align: center;
+}
 </style>
-

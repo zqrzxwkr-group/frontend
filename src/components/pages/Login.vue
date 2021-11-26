@@ -54,7 +54,7 @@
             {required: true, message: '姓名不能为空', trigger: 'blur'}
           ],
           password: [
-            {required: true, message: '密码错误', trigger: 'blur'}
+            {required: true, message: '密码不能为空', trigger: 'blur'}
           ]
 
         }
@@ -63,13 +63,11 @@
     methods: {
       handleSubmit (name) { // login
         this.$refs[name].validate((valid) => {
-          console.log()
-          console.log(this.formValidate.password)
           this.modal_loading = true
           setTimeout(() => {
             this.modal_loading = false
 
-            if (this.formValidate.name === '666' && this.formValidate.password === '666') {
+            if (this.formValidate.name === '123' && this.formValidate.password === '123') {
               valid = true
             } else {
               valid = false
@@ -82,7 +80,7 @@
               this.$Message.error('登录失败!')
               this.$Notice.warning({
                 title: '登录提示',
-                desc: '用户名/密码 随意输入...'
+                desc: '请输入正确的用户名和密码'
               })
             }
           }, 100)
