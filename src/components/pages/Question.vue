@@ -17,7 +17,7 @@
         title="回答"
         v-model="modal"
         class-name="vertical-center-modal">
-        <p v-if="isShow" class='zi'>{{ans.data.answer}}</p>
+        <p v-if="isShow" class='zi'>{{ans}}</p>
     </Modal>
     <br />
     <br>
@@ -38,15 +38,15 @@ export default {
   },
   methods: {
     query: function () {
-      let formData = new FormData()
-      formData.append('question', this.ques)
       axios({
-        method: 'POST',
-        url: 'http://127.0.0.1:5000',
-        data: formData
-      }).then((response) => (this.ans = response))
-      this.modal = true
-      this.isShow = true
+        method: 'GET',
+        url: 'http://47.94.129.13:8081/qa/' + this.ques + '/'
+      }).then((response) => {
+        this.ans = response.data.answer
+        this.modal = true
+        this.isShow = true
+        this.ques = null
+      })
     }
   }
 }

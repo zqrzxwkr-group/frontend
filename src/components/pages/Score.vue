@@ -111,22 +111,39 @@ export default {
         .get(
           'http://47.94.129.13:8081/query/' + this.button1 + '/' + this.wenli + '/' + this.currentPage
         )
-        .then((response) => (this.info = response))
-      this.isShow = true
-      this.total = 0
-      this.data1 = []
-      for (var i = 0; i < this.info.data.data.length; i++) {
-        var item = {name: this.info.data.data[i].school,
-          dc: this.info.data.data[i].doubleFirstClass,
-          s2020: this.info.data.data[i].avg2020,
-          s2019: this.info.data.data[i].avg2019,
-          s2018: this.info.data.data[i].avg2018,
-          s2017: this.info.data.data[i].avg2017,
-          s2016: this.info.data.data[i].avg2016}
-        this.data1.unshift(item)
-      }
-      this.total = this.info.data.total
-      // console.log(this.total)
+        .then((response) => {
+          this.info = response
+          this.isShow = true
+          this.total = 0
+          this.data1 = []
+          for (var i = 0; i < this.info.data.data.length; i++) {
+            var item = {
+              name: this.info.data.data[i].school,
+              dc: this.info.data.data[i].doubleFirstClass,
+              s2020: this.info.data.data[i].avg2020,
+              s2019: this.info.data.data[i].avg2019,
+              s2018: this.info.data.data[i].avg2018,
+              s2017: this.info.data.data[i].avg2017,
+              s2016: this.info.data.data[i].avg2016
+            }
+            this.data1.push(item)
+          }
+          this.total = this.info.data.total
+        })
+      // this.isShow = true
+      // this.total = 0
+      // this.data1 = []
+      // for (var i = 0; i < this.info.data.data.length; i++) {
+      //   var item = {name: this.info.data.data[i].school,
+      //     dc: this.info.data.data[i].doubleFirstClass,
+      //     s2020: this.info.data.data[i].avg2020,
+      //     s2019: this.info.data.data[i].avg2019,
+      //     s2018: this.info.data.data[i].avg2018,
+      //     s2017: this.info.data.data[i].avg2017,
+      //     s2016: this.info.data.data[i].avg2016}
+      //   this.data1.unshift(item)
+      // }
+      // this.total = this.info.data.total
     },
     changePage (index) {
       this.currentPage = index

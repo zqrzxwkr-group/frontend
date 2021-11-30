@@ -113,25 +113,27 @@ export default {
   },
   methods: {
     query: function () {
+      var that = this
       axios
         .get(
           'http://47.94.129.13:8081/college/' + this.button1 + '/' + this.currentPage
         )
-        .then((response) => (this.info = response))
-      this.isShow = true
-      this.total = 0
-      this.data1 = []
-      for (var i = 0; i < this.info.data.data.length; i++) {
-        var item = {name: this.info.data.data[i].name,
-          icon: this.info.data.data[i].icon,
-          city: this.info.data.data[i].city,
-          department: this.info.data.data[i].department,
-          charact: this.info.data.data[i].charact,
-          url: this.info.data.data[i].url}
-        this.data1.unshift(item)
-      }
-      this.total = this.info.data.total
-      // console.log(this.total)
+        .then((response) => {
+          that.info = response
+          that.isShow = true
+          that.total = 0
+          that.data1 = []
+          for (var i = 0; i < that.info.data.data.length; i++) {
+            var item = {name: that.info.data.data[i].name,
+              icon: that.info.data.data[i].icon,
+              city: that.info.data.data[i].city,
+              department: that.info.data.data[i].department,
+              charact: that.info.data.data[i].charact,
+              url: that.info.data.data[i].url}
+            that.data1.push(item)
+          }
+          that.total = that.info.data.total
+        })
     },
     changePage (index) {
       this.currentPage = index

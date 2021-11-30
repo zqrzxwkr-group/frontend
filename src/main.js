@@ -2,11 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './router'
 import VueI18n from 'vue-i18n'
 Vue.use(VueI18n)
-import ViewUI from 'view-design'
-Vue.use(ViewUI)
 import api from './api/index.js'
 Vue.use(api)
 import store from './store'
@@ -15,7 +12,9 @@ import 'view-design/dist/styles/iview.css'
 import './assets/styles/layout/layout.less' // 引入布局样式
 import './assets/styles/cover/cover.less' // 覆盖样式
 import './assets/styles/base/base.less'
-
+import ViewUI from 'view-design'
+Vue.use(ViewUI)
+import router from './router'
 import * as filters from './common/filter'
 // register global utility filters.
 Object.keys(filters).forEach(key => {

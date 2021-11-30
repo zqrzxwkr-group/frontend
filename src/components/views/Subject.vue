@@ -5,7 +5,7 @@
         哲学
         <div slot='content' class="menu2">
             <Collapse accordion>
-                <Panel>
+                <Panel :hide-arrow="true">
                     哲学类
                     <div slot='content'>
                         <table cellspacing="40" class="menu3">
@@ -40,11 +40,11 @@
             </Collapse>
         </div>
     </Panel>
-    <Panel name="2" class="menu">
+    <Panel name="2" class="menu" :hide-arrow="true">
         经济学
         <div slot='content' class="menu2">
                 <Collapse accordion>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         经济学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -81,7 +81,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         财政学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -103,7 +103,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         金融学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -145,7 +145,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         经济与贸易类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -170,11 +170,11 @@
                 </Collapse>
             </div>
     </Panel>
-    <Panel name="3" class="menu">
+    <Panel name="3" class="menu" :hide-arrow="true">
         法学
         <div slot='content' class="menu2">
                 <Collapse accordion>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         法学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -211,7 +211,7 @@
                             </table>
                         </div>
                     </Panel>
-                     <Panel>
+                     <Panel :hide-arrow="true">
                         政治学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -253,7 +253,7 @@
                             </table>
                         </div>
                     </Panel>
-                     <Panel>
+                     <Panel :hide-arrow="true">
                         社会学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -293,11 +293,11 @@
                 </Collapse>
             </div>
     </Panel>
-    <Panel name="4" class="menu">
+    <Panel name="4" class="menu" :hide-arrow="true">
         教育学
         <div slot='content' class="menu2">
                 <Collapse accordion>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         教育学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -344,7 +344,7 @@
                             </table>
                         </div>
                     </Panel>
-                     <Panel>
+                     <Panel :hide-arrow="true">
                         体育学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -384,11 +384,11 @@
                 </Collapse>
             </div>
     </Panel>
-    <Panel name="5" class="menu">
+    <Panel name="5" class="menu" :hide-arrow="true">
         文学
         <div slot='content' class="menu2">
                 <Collapse accordion>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         中国语言文学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -425,7 +425,7 @@
                             </table>
                         </div>
                     </Panel>
-                     <Panel>
+                     <Panel :hide-arrow="true">
                         外国语言文学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -472,7 +472,7 @@
                             </table>
                         </div>
                     </Panel>
-                     <Panel>
+                     <Panel :hide-arrow="true">
                         新闻传播学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -512,11 +512,11 @@
                 </Collapse>
             </div>
     </Panel>
-    <Panel name="6" class="menu">
+    <Panel name="6" class="menu" :hide-arrow="true"> 
         历史学
         <div slot='content' class="menu2">
                 <Collapse accordion>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         历史学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -561,11 +561,11 @@
                 </Collapse>
             </div>
     </Panel>
-    <Panel name="7" class="menu">
+    <Panel name="7" class="menu" :hide-arrow="true">
         理学
         <div slot='content' class="menu2">
                 <Collapse accordion>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         数学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -602,7 +602,7 @@
                             </table>
                         </div>
                     </Panel>
-                     <Panel>
+                     <Panel :hide-arrow="true">
                         物理学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -634,7 +634,7 @@
                             </table>
                         </div>
                     </Panel>
-                     <Panel>
+                     <Panel :hide-arrow="true">
                         化学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -666,7 +666,7 @@
                             </table>
                         </div>
                     </Panel>
-                     <Panel>
+                     <Panel :hide-arrow="true">
                         天文学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -683,7 +683,7 @@
                             </table>
                         </div>
                     </Panel>
-                     <Panel>
+                     <Panel :hide-arrow="true">
                         地理科学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -710,7 +710,7 @@
                             </table>
                         </div>
                     </Panel>
-                     <Panel>
+                     <Panel :hide-arrow="true">
                         大气科学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -732,7 +732,7 @@
                             </table>
                         </div>
                     </Panel>
-                     <Panel>
+                     <Panel :hide-arrow="true">
                         海洋科学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -759,7 +759,7 @@
                             </table>
                         </div>
                     </Panel>
-                     <Panel>
+                     <Panel :hide-arrow="true">
                         地球物理学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -781,7 +781,7 @@
                             </table>
                         </div>
                     </Panel>
-                     <Panel>
+                     <Panel :hide-arrow="true">
                         地质学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -803,7 +803,7 @@
                             </table>
                         </div>
                     </Panel>
-                     <Panel>
+                     <Panel :hide-arrow="true">
                         生物科学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -830,7 +830,7 @@
                             </table>
                         </div>
                     </Panel>
-                     <Panel>
+                     <Panel :hide-arrow="true">
                         心理学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -852,7 +852,7 @@
                             </table>
                         </div>
                     </Panel>
-                     <Panel>
+                     <Panel :hide-arrow="true">
                         统计学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -877,11 +877,11 @@
                 </Collapse>
             </div>
     </Panel>
-    <Panel name="8" class="menu">
+    <Panel name="8" class="menu" :hide-arrow="true">
         工学
         <div slot='content' class="menu2">
                 <Collapse accordion>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         力学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -903,7 +903,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         机械类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -945,7 +945,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         仪器类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -962,7 +962,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         材料类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1004,7 +1004,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         能源动力类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1031,7 +1031,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         电子类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1063,7 +1063,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         自动化类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1095,7 +1095,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         计算机类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1157,7 +1157,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         土木类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1199,7 +1199,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         水利类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1226,7 +1226,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         测绘类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1253,7 +1253,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         化工与制药类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1285,7 +1285,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         地质类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1317,7 +1317,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         环境科学与工程类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1352,11 +1352,11 @@
                 </Collapse>
             </div>
     </Panel>
-    <Panel name="9" class="menu">
+    <Panel name="9" class="menu" :hide-arrow="true">
         农学
         <div slot='content' class="menu2">
                 <Collapse accordion>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         植物生产类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1383,7 +1383,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         自然保护与环境生态类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1410,7 +1410,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         动物生产类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1440,11 +1440,11 @@
                 </Collapse>
             </div>
     </Panel>
-    <Panel name="10" class="menu">
+    <Panel name="10" class="menu" :hide-arrow="true">
         医学
         <div slot='content' class="menu2">
                 <Collapse accordion>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         基础医学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1461,7 +1461,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         临床医学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1493,7 +1493,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         口腔医学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1510,7 +1510,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         中医学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1532,7 +1532,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         药学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1562,11 +1562,11 @@
                 </Collapse>
             </div>
     </Panel>
-    <Panel name="11" class="menu">
+    <Panel name="11" class="menu" :hide-arrow="true">
         管理学
         <div slot='content' class="menu2">
                 <Collapse accordion>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         管理科学与工程类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1588,7 +1588,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         工商管理类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1610,7 +1610,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         公共管理类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1632,7 +1632,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         图书情报与档案管理类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1657,11 +1657,11 @@
                 </Collapse>
             </div>
     </Panel>
-    <Panel name="12" class="menu">
+    <Panel name="12" class="menu" :hide-arrow="true">
         艺术学
         <div slot='content' class="menu2">
                 <Collapse accordion>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         艺术学理论类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1678,7 +1678,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         音乐与舞蹈学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1700,7 +1700,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         戏剧与影视学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1717,7 +1717,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         美术学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
@@ -1739,7 +1739,7 @@
                             </table>
                         </div>
                     </Panel>
-                    <Panel>
+                    <Panel :hide-arrow="true">
                         设计学类
                         <div slot='content'>
                             <table cellspacing="40" class="menu3">
